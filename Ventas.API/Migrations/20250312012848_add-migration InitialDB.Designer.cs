@@ -11,8 +11,8 @@ using Ventas.API.Data;
 namespace Ventas.API.Migrations
 {
     [DbContext(typeof(DataContext))]
-    [Migration("20250307204447_InitialDB")]
-    partial class InitialDB
+    [Migration("20250312012848_add-migration InitialDB")]
+    partial class addmigrationInitialDB
     {
         /// <inheritdoc />
         protected override void BuildTargetModel(ModelBuilder modelBuilder)

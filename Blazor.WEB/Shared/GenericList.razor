@@ -1,0 +1,57 @@
+﻿
+@typeparam TItem
+
+@if (MyLis == null)
+{
+	@if (Loading == null)
+	{
+		<div class="align-items-center">
+			<img src="https://cdn.pixabay.com/animation/2023/08/11/21/18/21-18-05-265_512.gif" />
+		</div>
+	}
+	else 
+	{
+		@Loading
+	}
+}
+else
+{
+	if (MyLis.Count == 0)
+	{
+		if (NoRecords == null)
+		{
+			<div class="alert-warning">
+				<p>No hay registros para mostrar</p>
+			</div>
+		}
+		else
+		{
+			@NoRecords
+		}
+	}
+	else
+	{
+		@Body
+	}
+
+}
+
+
+@code {
+
+	[Parameter]
+	public RenderFragment? Loading { get; set; }
+
+	[Parameter]
+	public RenderFragment? NoRecords { get; set; }
+
+	//Parametros obligatorios
+
+	[Parameter]
+	[EditorRequired]
+	public RenderFragment? Body { get; set; } = null;
+	[Parameter]
+	[EditorRequired]
+	public List <TItem> MyLis { get; set; } = null!;
+
+}

@@ -5,7 +5,7 @@ namespace Blazor.WEB.Repositories
     public class HttpResponseWraper<T>
     {
         public HttpResponseWraper(T? response, bool error, HttpResponseMessage
-httpResponseMessage)
+        httpResponseMessage)
         {
             Error = error;
             Response = response;
